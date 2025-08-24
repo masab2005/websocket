@@ -5,11 +5,11 @@ const server = http.createServer(app)
 import {Server} from 'socket.io';
 const io = new Server(server, {
   cors: {
-    origin: "*", // allow all origins (change this in production)
+    origin: "*", 
   },
 });
 
-const userSocketMap = {}; // { userId: socketId }
+const userSocketMap = {};
 
 io.on("connection", (socket) => {
   console.log("New client connected:", socket.id);
